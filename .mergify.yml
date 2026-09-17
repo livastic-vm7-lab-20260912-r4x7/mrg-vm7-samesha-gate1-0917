@@ -1,0 +1,15 @@
+pull_request_rules: []
+merge_protections:
+  - name: VM7 Gate1 easy
+    if:
+      - base = easy
+    success_conditions:
+      - -draft
+  - name: VM7 Gate1 strict
+    if:
+      - base = main
+    success_conditions:
+      - label = VM7_GATE1_STRICT_NEVER
+merge_protections_settings:
+  reporting_method: check-runs
+  post_comment: true
